@@ -1,42 +1,6 @@
-# include <iostream>
-# include <stdlib.h>
-# include <errno.h>
-# include <stdalign.h>
-# include <sandbox.h>
-# include <stdio.h>
 
 
-typedef struct s_list
-{
-    short   a;
-    int32_t b;
-    int8_t  c;
-    struct s_list *object;
-}               t_list;
-
-typedef enum s_country
-{
-    USA = (1<<1),
-    ISLAND = (1<<2),
-    ITALY = (1<<3),
-    RUSSIAN = (1<<4)
-}               t_country;
-
-typedef class s_Class
-{
-    private :
-    short       ret;
-    t_country   country;
-    t_list      *list;
-
-    public :
-    void    init_(void);
-    // void    set_(int *, int *);
-    // void    disp(short *, int16_t& temp);
-    void    disp(void);
-
-}               t_class;
-
+# include "class.hpp"
 
 using namespace std;
 
@@ -77,10 +41,10 @@ void    t_class::init_()
     list = new_s;
 }
 
-
 int   main(int argc, char **argv)
 {
     t_class ret;
+    
     ret.init_();
     ret.disp();
 
