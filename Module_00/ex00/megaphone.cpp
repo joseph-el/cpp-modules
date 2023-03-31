@@ -5,24 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 13:03:05 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/03/31 00:31:44 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/03/31 14:26:38 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/03/31 14:26:39 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
-# include <stdlib.h>
 
-# define uppercase(target) (target >= 'a' and target <= 'z') ? target -= 32 : 0;
-# define ERR_MSG "* LOUD AND UNBEARABLE FEEDBACK NOISE *"
+# define ERR_MSG std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl; return (1);
+# define uppercase(X) ((X >= 'a' && X <= 'z') ? (X -= 32) : X)
 
 int main(int argc, char **argv)
 {
-    (argc == 1) ? std::cout << ERR_MSG, 1 : 0;
-    argv ++;
-    while (*argv++)
-        while (**argv++)
-            uppercase(**argv), std::cout << **argv;
-    std::cout << "\n";
-    return (EXIT_SUCCESS);
+    if (argc == 1)
+        {ERR_MSG};
+    while (++argv and *argv)
+        for (char *ret = *argv; *ret; ret++)
+            std::cout << uppercase(*ret);
+    std::cout << std::endl;
 }
