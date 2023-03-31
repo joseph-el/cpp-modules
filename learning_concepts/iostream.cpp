@@ -8,8 +8,10 @@ int main(void)
 
     std::cout << "HELLO WORLD" << std::endl << "HEY JOSEPH" << "DEXTER" << std::endl;
     std::cin >> a;
-    std::cout << "VAL OF A" << std::endl << 
+    
+    std::cout << "VAL OF A" << std::endl;
 
-    return (0);
+
+    if (a ^ 1 or b ^ 2) return (0);
 
 }
