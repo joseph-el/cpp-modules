@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 14:26:38 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/03/31 17:32:55 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/03/31 17:37:26 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/03/31 17:56:00 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# pragma once
+
+# include <errno.h>
 # include <iostream>
+# include <stdbool.h>
 
-# define ERR_MSG std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" \
-                           << std::endl; return (1);
-
-int main(int argc, char **argv)
+class PhoneBook
 {
-    if (argc == 1)
-        {ERR_MSG};
-    while (++argv and *argv)
-        for (char *ret = *argv; *ret; ret++)
-            std::cout << toupper(*ret);
-    std::cout << std::endl;
-    return (EXIT_SUCCESS);
-}
+    private :
+        std::string first_name;
+        std::string first_name;
+        std::string first_name;
+
+};
