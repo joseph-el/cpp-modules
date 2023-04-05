@@ -20,5 +20,5 @@ do
   git push origin master
   clear
   echo "Sleeping 10s ..."
-  sleep 10
+  sleep 120
 done
