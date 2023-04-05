@@ -19,6 +19,6 @@ do
   git commit -m "Learning ..."
   git push origin master
   clear
-  
+  echo "Sleeping 10s ..."
   sleep 10
 done
