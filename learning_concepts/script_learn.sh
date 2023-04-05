@@ -15,6 +15,7 @@ do
 
   done
   ./_clear
+  git request-pull
   git add .
   git commit -m "Learning ..."
   git push origin master
