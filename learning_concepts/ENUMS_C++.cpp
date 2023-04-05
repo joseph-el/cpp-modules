@@ -1,51 +1,52 @@
-# include <iostream>
-# include <stdbool.h>
-
-
-typedef class s_class
-{
-    private :
-        short ret;
-        short get;
-        std::string name;
-    public :
-        void    init();
-        void    disp();
-
-    friend void friend_(s_class & class_);
-}               t_class;
-
-void    t_class::init(void)
-{
-    this->get = ENAMETOOLONG;
-    this->ret = ENOLINK;
-    this->name = (char *)strdup("HEY MY NAME JOSEPH");
-}
+#include <iostream>
 
 using namespace std;
 
-void    t_class::disp(void)
+typedef short t_class;
+
+class s_Rectangle 
 {
-    std::cout << "Edited " << this->ret << endl;
-    std::cout << "JOSEPH " << this->get << endl;
-    std::cout << "ORY " << this->name << endl;
+    int width, height;
+    
+public:
+
+    void set_values (int,int);
+    int area() {return width * height;}
+};
+
+class Rectangle {
+  int width, height;
+public:
+  Rectangle(int x, int y) : width(x), height(y) {}
+  int area(void) { return width * height; }
+};
+
+void s_Rectangle::set_values (int x, int y){
+  width = x;
+  height = y;
 }
 
-void    friend_(t_class &js)
+int main () 
 {
-    js.get = 1337;
-    js.ret = 42;
+  s_Rectangle rect;
+
+    rect.set_values (3,4);
+    
+    cout << "test: " << rect.area();
+  return 0;
+    
+  Rectangle obj (3, 4);
+  Rectangle * foo, * bar, * baz;
+  foo = &obj;
+  bar = new Rectangle (5, 6);
+  baz = new Rectangle[2] { {2,5}, {3,6} };
+  cout << "objs area: " << obj.area() ;
+  cout << "*foos area: " << foo->area();
+  cout << "*bars area: " << bar->area() <<;
+  cout << "baz[0]s area:" << baz[0].area();
+  cout << "baz[1]s area:" << baz[1].area();       
+  delete bar;
+  delete[] baz;
+
+  return 0;
 }
-
-int main(void)
-{
-    t_class ret;
-
-    ret.init();
-    ret.disp();
-    friend_(ret);
-    ret.disp();
-
-    return (EXIT_SUCCESS);
-}
-
