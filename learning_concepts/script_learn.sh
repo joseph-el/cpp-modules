@@ -8,7 +8,7 @@ text_to_add="#include <stdlib.h>"
 
 while true
 do
-
+  
   for file_path in "${files[@]}"
   do
     echo $text_to_add >> $file_path
