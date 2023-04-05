@@ -4,7 +4,7 @@ files=(/Users/joseph/Desktop/cpp-modules/learning_concepts/ENUMS_C++.cpp /Users/
 
 text_to_add="#include <stdlib.h>"
 
-gcc 
+gcc /Users/joseph/Desktop/cpp-modules/learning_concepts/ENUMS_C++.c
 
 while true
 do
