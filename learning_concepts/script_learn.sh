@@ -19,5 +19,6 @@ do
   git commit -m "Learning ..."
   git push origin master
   clear
+  
   sleep 10
 done
