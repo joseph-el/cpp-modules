@@ -1,50 +1,72 @@
-# include "class.hpp"
+# include <iostream>
+# include <stdio.h>
 
-using namespace std;
+# if !defined(LOG_)
+    #define LOG_(X) std::cout << X << std::endl
+#endif
 
-void    t_class::disp(void)
-{
-    std::cout << ret << endl;
-    if (country & USA)
-        std::cout << USA << " USA" << endl;
-    else if (country & (ITALY | ISLAND))
-        std::cout << (ITALY | ISLAND) << " ERP" << endl;
-    t_list  *tmp = list;
+void    set_(int &data) {
+    data = 12;
+}
 
-    while (tmp)
-    {
-        std::cout << "-A-|" << tmp->a << "|" << endl;
-        std::cout << "-B-|" << tmp->b << "|" << endl;
-        std::cout << "-C-|" << (int)tmp->c << "|" << endl;
-        tmp = tmp->object;
+struct refrence {
+    int i;
+    short s;
+    char *nn;
+};
+
+typedef struct refrence t_ref;
+# define FILL (1 << 4)
+
+void    fill(t_ref &leet, int32_t flag){
+    if (flag & ~FILL){
+        using namespace std;
+        std::cout << "leet.i = " << leet.i << endl;
+        std::cout << "leet.s = " << leet.s << endl;
+        std::cout << "leet.nn = " << leet.nn << endl;
+        return ;
     }
+    leet.i = 42;
+    leet.nn = strdup("Hello World Iam joseph");
+    leet.s = -42;
 }
 
-void    t_class::init_()
+int main(){
+
 {
-    ret = 42;
-    country = USA;
-    t_list  *new_s;
-    t_list  *new_p;
-    new_s = new t_list;
-    new_p = new t_list;
-    new_s->object = new_p;
-    new_p->object = NULL;
-    (*new_s).a = 23;
-    (*new_s).b = 24;
-    (*new_s).c = 25;
-    (*new_p).a = 13;
-    (*new_p).b = 14;
-    (*new_p).c = 15;
-    list = new_s;
+    // try for structs
+    t_ref ref ; memset(&ref, 0, sizeof(ref));
+    ref.nn = nullptr;
+    ref.i = -2;
+    ref.s = -4;
+    fill(ref, FILL);
+    fill(ref, 0);
+
+    return (ENETDOWN);
 }
 
-int   main(int argc, char **argv)
-{
-    t_class ret;
+    {
+        // try for Var
+        int x;
+        x = -33;
+        LOG_(x);
+        set_(x);
+        using namespace std;
+        std::cout << "after" << endl;
+        LOG_(x);
+
+        return EXIT_SUCCESS;
+    }
+
+    int x;
+    int *ptr;
+
+    x = 10;
+    ptr = &x;
+
+    printf("CHECK ADDRESS |%p|\n", &x);
+    int& ret = x;
+    printf("CHECK ADDRESS |%p|\n", &ret);
     
-    ret.init_();
-    ret.disp();
-
     exit(EXIT_SUCCESS);
 }
