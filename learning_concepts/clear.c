@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:18:27 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/05 11:47:27 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:49:13 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(){
     // void    *ptr = pthread_setugid_np;
 
     // while (1){
-        write(1, "RUN |", sizeof("RUN |"));
+        write(1, "RUN |", 6);
         usleep(350000), clear_();
         write(1, "ADD /", 6);
         usleep(350000), clear_();
@@ -38,5 +38,5 @@ int main(){
         write(1, "PUSH \\", 7);
         usleep(350000);
     // }
-    return (-1);
+    return (EXIT_FAILURE);
 }
