@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:18:27 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/05 13:01:49 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/04/05 22:12:44 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 # include <stdio.h>
 # include <stdlib.h>
 // # include <protocols/routed.h>
+
+
+
+struct gg{
+    int n;
+    int k;
+};
+
 
 void clear_()
 {

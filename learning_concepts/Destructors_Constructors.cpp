@@ -3,6 +3,7 @@
 # include <stdio.h>
 # include "Colors.hpp"
 
+
 #if !defined(SIG)
     using namespace std;
     # define SIG(x, sepf) cout << x << endl; if (sepf) {cout << sepf << endl};
@@ -25,6 +26,9 @@
 struct vec1{
     long
         in_r:10, in_s:10;
+
+
+    void    (*intirr)(int, void *);
 };
 
 class vec{
@@ -37,6 +41,7 @@ class vec{
     public :
              vec();   // constructor
             ~vec();   // destructor
+
     void     (*clearScreen_)(useconds_t);
     void     (*_ufpull_)(struct vec1 &, short); // function *()
     bool        ufcheck(class vec &, int16_t); // member function in this class
@@ -129,9 +134,11 @@ vec::vec(){
     ADDRESS_PTR(this->set, this->ret, this->leet, this->mach_port_t_s); 
 }
 
+void init(int u, void *ptr){
+    return;
+}
 
-int main() { 
-
+int main() {
     vec myClass;
 
     myClass.ufcheck(myClass, uf_string | uf_struct | uf_var);
