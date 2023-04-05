@@ -14,7 +14,6 @@ do
     echo $text_to_add >> $file_path
 
   done
-  
   git add .
   git commit -m "Learning ..."
   git push origin master
