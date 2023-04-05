@@ -18,6 +18,6 @@ do
   git add .
   git commit -m "Learning ..."
   git push origin master
-  ./_clear
+  clear
   sleep 10
 done
