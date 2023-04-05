@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:18:27 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/03 17:26:29 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:17:32 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(){
         usleep(350000), clear_();
         write(1, "HeLLo /", 8);
         usleep(350000), clear_();
-        write(1, "HeLLo __", 8);
+        write(1, "HeLLo --", 8);
         usleep(350000), clear_();
         write(1, "HeLLo |", 8);
         usleep(350000), clear_();
