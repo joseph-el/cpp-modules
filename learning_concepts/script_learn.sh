@@ -17,6 +17,6 @@ do
   git add .
   git commit -m "Learning ..."
   git push origin master
-  
+  ./
   sleep 2
 done
