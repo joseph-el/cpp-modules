@@ -27,7 +27,8 @@ private:
 
 int TestRun::_instances{ 0 };
 
-int main(){TestRun ret}#include <stdlib.h>
+int main(){TestRun ret}
+#include <stdlib.h>
 #include <stdlib.h>
 #include <stdlib.h>
 #include <stdlib.h>
