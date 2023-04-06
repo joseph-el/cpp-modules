@@ -45,6 +45,5 @@ int main(void)
     ret.disp();
     friend_(ret);
     ret.disp();
-
     return (EXIT_SUCCESS);
 }

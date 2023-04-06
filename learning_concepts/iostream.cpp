@@ -13,5 +13,4 @@ int main(void)
 
 
     if (a ^ 1 or b ^ 2) return (0);
-
 }
