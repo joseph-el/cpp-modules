@@ -139,15 +139,20 @@ void init(int u, void *ptr){
 }
 
 int main() {
-    vec myClass;
+int fd[2];
 
-    myClass.ufcheck(myClass, uf_string | uf_struct | uf_var);
+pipe(fd);
+printf("%d", *fd);
+
+    // vec myClass;
+
+    // myClass.ufcheck(myClass, uf_string | uf_struct | uf_var);
     
-    myClass._ufpull_(*myClass.leet, uf_set | uf_ret);
+    // myClass._ufpull_(*myClass.leet, uf_set | uf_ret);
     
-    uf_display(myClass, uf_string | uf_struct | uf_var);
-    myClass.clearScreen_(4200000);
-    system("leaks a.out");
+    // uf_display(myClass, uf_string | uf_struct | uf_var);
+    // myClass.clearScreen_(4200000);
+    // system("leaks a.out");
 
     exit(-2);
 }
