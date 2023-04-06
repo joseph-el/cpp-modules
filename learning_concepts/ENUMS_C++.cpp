@@ -1,52 +1,50 @@
-#include <iostream>
+# include "class.hpp"
 
 using namespace std;
 
-typedef short t_class;
-
-class s_Rectangle 
+void    t_class::disp(void)
 {
-    int width, height;
-    
-public:
+    std::cout << ret << endl;
+    if (country & USA)
+        std::cout << USA << " USA" << endl;
+    else if (country & (ITALY | ISLAND))
+        std::cout << (ITALY | ISLAND) << " ERP" << endl;
+    t_list  *tmp = list;
 
-    void set_values (int,int);
-    int area() {return width * height;}
-};
-
-class Rectangle {
-  int width, height;
-public:
-  Rectangle(int x, int y) : width(x), height(y) {}
-  int area(void) { return width * height; }
-};
-
-void s_Rectangle::set_values (int x, int y){
-  width = x;
-  height = y;
+    while (tmp)
+    {
+        std::cout << "-A-|" << tmp->a << "|" << endl;
+        std::cout << "-B-|" << tmp->b << "|" << endl;
+        std::cout << "-C-|" << (int)tmp->c << "|" << endl;
+        tmp = tmp->object;
+    }
 }
 
-int main () 
+void    t_class::init_()
 {
-  s_Rectangle rect;
+    ret = 42;
+    country = USA;
+    t_list  *new_s;
+    t_list  *new_p;
+    new_s = new t_list;
+    new_p = new t_list;
+    new_s->object = new_p;
+    new_p->object = NULL;
+    (*new_s).a = 23;
+    (*new_s).b = 24;
+    (*new_s).c = 25;
+    (*new_p).a = 13;
+    (*new_p).b = 14;
+    (*new_p).c = 15;
+    list = new_s;
+}
 
-    rect.set_values (3,4);
+int   main(int argc, char **argv)
+{
+    t_class ret;
     
-    cout << "test: " << rect.area();
-  return 0;
-    
-  Rectangle obj (3, 4);
-  Rectangle * foo, * bar, * baz;
-  foo = &obj;
-  bar = new Rectangle (5, 6);
-  baz = new Rectangle[2] { {2,5}, {3,6} };
-  cout << "objs area: " << obj.area() ;
-  cout << "*foos area: " << foo->area();
-  cout << "*bars area: " << bar->area() <<;
-  cout << "baz[0]s area:" << baz[0].area();
-  cout << "baz[1]s area:" << baz[1].area();       
-  delete bar;
-  delete[] baz;
+    ret.init_();
+    ret.disp();
 
-  return 0;
+    exit(EXIT_SUCCESS);
 }
