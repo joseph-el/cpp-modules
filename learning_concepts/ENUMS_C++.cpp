@@ -1,52 +1,68 @@
-#include <iostream>
+# pragma once
+# include <iostream>
+# include <stdlib.h>
+# include <errno.h>
+# include <limits>
 
 using namespace std;
 
-typedef short t_class;
-
-class s_Rectangle 
+int32_t main(int32_t argc, char **argv)
 {
-    int width, height;
+
+    {
+        char **str;
+        std::int32_t size = ENAMETOOLONG;
+        
+        str = new char*[size];
+        for (size_t i = 0; i < ENAMETOOLONG; i++)
+        {
+            str[i] = new char[ENOTBLK];
+            strncpy((char *)str[i], "LOLOLOLOLOLOLO", sizeof("LOLOLOLOLOLOLO") + 1);
+            std::cout << str[i] << (char)32 << i + 1 << endl;
+        }
+        return (ENOPROTOOPT);
+    }
     
-public:
+    {
+        int *arr;
+        // arr = new int(INT32_MAX + INT16_MAX); // overflow?✅
+        std::cout << *arr << std::endl;
+        return (ENOMEM);
+    }
 
-    void set_values (int,int);
-    int area() {return width * height;}
-};
+    {
+        int *arr;
+        arr = new int[10], memset(arr, -1, sizeof(int) * 10);
+        for (size_t i = 0; i < 10; i++)
+        {
+            std::cout << arr[i] << endl;
+        }
+        delete arr;
+        *(arr + 4) = 43; // use after free ✅
+        // system("c++ -fsanitize=address -g memory.cpp");
+        return EXIT_SUCCESS; 
+        int *ptr;
+        ptr = new int;
+        *ptr = 9;
+        delete ptr;
+        ptr = new int;
+        *ptr = (char)22;
+        printf("check |%d|\n", *ptr);
+        system("leaks a.out");
+    }
 
-class Rectangle {
-  int width, height;
-public:
-  Rectangle(int x, int y) : width(x), height(y) {}
-  int area(void) { return width * height; }
-};
 
-void s_Rectangle::set_values (int x, int y){
-  width = x;
-  height = y;
-}
-
-int main () 
-{
-  s_Rectangle rect;
-
-    rect.set_values (3,4);
+    return 1;
+    int *ptr = (int *)malloc(sizeof(int) * 100);
+    *(ptr + 23) = 42;
+    std::cout << *(ptr + 23);
+    free(ptr);
+    std::cout << "-----------------" << endl;
+    std::cout << *(ptr + 23) << endl;
+    std::cout << "-----------------" << endl;
+    *(ptr + 200000) = 1337;
+    std::cout << *(ptr + 20000) << endl;
+    std::cout << "-----------------" << endl;
     
-    cout << "test: " << rect.area();
-  return 0;
-    
-  Rectangle obj (3, 4);
-  Rectangle * foo, * bar, * baz;
-  foo = &obj;
-  bar = new Rectangle (5, 6);
-  baz = new Rectangle[2] { {2,5}, {3,6} };
-  cout << "objs area: " << obj.area() ;
-  cout << "*foos area: " << foo->area();
-  cout << "*bars area: " << bar->area() <<;
-  cout << "baz[0]s area:" << baz[0].area();
-  cout << "baz[1]s area:" << baz[1].area();       
-  delete bar;
-  delete[] baz;
-
-  return 0;
+    return 1;
 }
