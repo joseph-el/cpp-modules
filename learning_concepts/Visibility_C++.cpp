@@ -1,51 +1,72 @@
 # include <iostream>
-# include <stdbool.h>
+# include <stdio.h>
 
+# if !defined(LOG_)
+    #define LOG_(X) std::cout << X << std::endl
+#endif
 
-typedef class s_class
-{
-    private :
-        short ret;
-        short get;
-        std::string name;
-    public :
-        void    init();
-        void    disp();
-
-    friend void friend_(s_class & class_);
-}               t_class;
-
-void    t_class::init(void)
-{
-    this->get = ENAMETOOLONG;
-    this->ret = ENOLINK;
-    this->name = (char *)strdup("HEY MY NAME JOSEPH");
+void    set_(int &data) {
+    data = 12;
 }
 
-using namespace std;
+struct refrence {
+    int i;
+    short s;
+    char *nn;
+};
 
-void    t_class::disp(void)
-{
-    std::cout << "Edited " << this->ret << endl;
-    std::cout << "JOSEPH " << this->get << endl;
-    std::cout << "ORY " << this->name << endl;
+typedef struct refrence t_ref;
+# define FILL (1 << 4)
+
+void    fill(t_ref &leet, int32_t flag){
+    if (flag & ~FILL){
+        using namespace std;
+        std::cout << "leet.i = " << leet.i << endl;
+        std::cout << "leet.s = " << leet.s << endl;
+        std::cout << "leet.nn = " << leet.nn << endl;
+        return ;
+    }
+    leet.i = 42;
+    leet.nn = strdup("Hello World Iam joseph");
+    leet.s = -42;
 }
 
-void    friend_(t_class &js)
+int main(){
+
 {
-    js.get = 1337;
-    js.ret = 42;
+    // try for structs
+    t_ref ref ; memset(&ref, 0, sizeof(ref));
+    ref.nn = nullptr;
+    ref.i = -2;
+    ref.s = -4;
+    fill(ref, FILL);
+    fill(ref, 0);
+
+    return (ENETDOWN);
 }
 
-int main(void)
-{
-    t_class ret;
+    {
+        // try for Var
+        int x;
+        x = -33;
+        LOG_(x);
+        set_(x);
+        using namespace std;
+        std::cout << "after" << endl;
+        LOG_(x);
 
-    ret.init();
-    ret.disp();
-    friend_(ret);
-    ret.disp();
+        return EXIT_SUCCESS;
+    }
 
-    return (EXIT_SUCCESS);
+    int x;
+    int *ptr;
+
+    x = 10;
+    ptr = &x;
+
+    printf("CHECK ADDRESS |%p|\n", &x);
+    int& ret = x;
+    printf("CHECK ADDRESS |%p|\n", &ret);
+    
+    exit(EXIT_SUCCESS);
 }
-
