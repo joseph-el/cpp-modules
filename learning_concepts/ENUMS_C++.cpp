@@ -1,72 +1,51 @@
 # include <iostream>
-# include <stdio.h>
+# include <stdbool.h>
 
-# if !defined(LOG_)
-    #define LOG_(X) std::cout << X << std::endl
-#endif
 
-void    set_(int &data) {
-    data = 12;
-}
-
-struct refrence {
-    int i;
-    short s;
-    char *nn;
-};
-
-typedef struct refrence t_ref;
-# define FILL (1 << 4)
-
-void    fill(t_ref &leet, int32_t flag){
-    if (flag & ~FILL){
-        using namespace std;
-        std::cout << "leet.i = " << leet.i << endl;
-        std::cout << "leet.s = " << leet.s << endl;
-        std::cout << "leet.nn = " << leet.nn << endl;
-        return ;
-    }
-    leet.i = 42;
-    leet.nn = strdup("Hello World Iam joseph");
-    leet.s = -42;
-}
-
-int main(){
-
+typedef class s_class
 {
-    // try for structs
-    t_ref ref ; memset(&ref, 0, sizeof(ref));
-    ref.nn = nullptr;
-    ref.i = -2;
-    ref.s = -4;
-    fill(ref, FILL);
-    fill(ref, 0);
+    private :
+        short ret;
+        short get;
+        std::string name;
+    public :
+        void    init();
+        void    disp();
 
-    return (ENETDOWN);
+    friend void friend_(s_class & class_);
+}               t_class;
+
+void    t_class::init(void)
+{
+    this->get = ENAMETOOLONG;
+    this->ret = ENOLINK;
+    this->name = (char *)strdup("HEY MY NAME JOSEPH");
 }
 
-    {
-        // try for Var
-        int x;
-        x = -33;
-        LOG_(x);
-        set_(x);
-        using namespace std;
-        std::cout << "after" << endl;
-        LOG_(x);
+using namespace std;
 
-        return EXIT_SUCCESS;
-    }
-
-    int x;
-    int *ptr;
-
-    x = 10;
-    ptr = &x;
-
-    printf("CHECK ADDRESS |%p|\n", &x);
-    int& ret = x;
-    printf("CHECK ADDRESS |%p|\n", &ret);
-    
-    exit(EXIT_SUCCESS);
+void    t_class::disp(void)
+{
+    std::cout << "Edited " << this->ret << endl;
+    std::cout << "JOSEPH " << this->get << endl;
+    std::cout << "ORY " << this->name << endl;
 }
+
+void    friend_(t_class &js)
+{
+    js.get = 1337;
+    js.ret = 42;
+}
+
+int main(void)
+{
+    t_class ret;
+
+    ret.init();
+    ret.disp();
+    friend_(ret);
+    ret.disp();
+
+    return (EXIT_SUCCESS);
+}
+
