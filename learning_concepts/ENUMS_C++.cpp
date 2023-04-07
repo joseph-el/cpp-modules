@@ -1,52 +1,72 @@
-#include <iostream>
+# include <iostream>
+# include <stdio.h>
 
-using namespace std;
+# if !defined(LOG_)
+    #define LOG_(X) std::cout << X << std::endl
+#endif
 
-typedef short t_class;
-
-class s_Rectangle 
-{
-    int width, height;
-    
-public:
-
-    void set_values (int,int);
-    int area() {return width * height;}
-};
-
-class Rectangle {
-  int width, height;
-public:
-  Rectangle(int x, int y) : width(x), height(y) {}
-  int area(void) { return width * height; }
-};
-
-void s_Rectangle::set_values (int x, int y){
-  width = x;
-  height = y;
+void    set_(int &data) {
+    data = 12;
 }
 
-int main () 
+struct refrence {
+    int i;
+    short s;
+    char *nn;
+};
+
+typedef struct refrence t_ref;
+# define FILL (1 << 4)
+
+void    fill(t_ref &leet, int32_t flag){
+    if (flag & ~FILL){
+        using namespace std;
+        std::cout << "leet.i = " << leet.i << endl;
+        std::cout << "leet.s = " << leet.s << endl;
+        std::cout << "leet.nn = " << leet.nn << endl;
+        return ;
+    }
+    leet.i = 42;
+    leet.nn = strdup("Hello World Iam joseph");
+    leet.s = -42;
+}
+
+int main(){
+
 {
-  s_Rectangle rect;
+    // try for structs
+    t_ref ref ; memset(&ref, 0, sizeof(ref));
+    ref.nn = nullptr;
+    ref.i = -2;
+    ref.s = -4;
+    fill(ref, FILL);
+    fill(ref, 0);
 
-    rect.set_values (3,4);
-    
-    cout << "test: " << rect.area();
-  return 0;
-    
-  Rectangle obj (3, 4);
-  Rectangle * foo, * bar, * baz;
-  foo = &obj;
-  bar = new Rectangle (5, 6);
-  baz = new Rectangle[2] { {2,5}, {3,6} };
-  cout << "objs area: " << obj.area() ;
-  cout << "*foos area: " << foo->area();
-  cout << "*bars area: " << bar->area() <<;
-  cout << "baz[0]s area:" << baz[0].area();
-  cout << "baz[1]s area:" << baz[1].area();       
-  delete bar;
-  delete[] baz;
+    return (ENETDOWN);
+}
 
-  return 0;
+    {
+        // try for Var
+        int x;
+        x = -33;
+        LOG_(x);
+        set_(x);
+        using namespace std;
+        std::cout << "after" << endl;
+        LOG_(x);
+
+        return EXIT_SUCCESS;
+    }
+
+    int x;
+    int *ptr;
+
+    x = 10;
+    ptr = &x;
+
+    printf("CHECK ADDRESS |%p|\n", &x);
+    int& ret = x;
+    printf("CHECK ADDRESS |%p|\n", &ret);
+    
+    exit(EXIT_SUCCESS);
 }
