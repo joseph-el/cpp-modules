@@ -26,8 +26,6 @@
 struct vec1{
     long
         in_r:10, in_s:10;
-
-
     void    (*intirr)(int, void *);
 };
 

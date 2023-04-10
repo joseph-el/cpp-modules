@@ -4,4 +4,5 @@
     # define GREEN  "\033[0;32m"
     # define WHITE  "\033[0;37m"
     # define YELLOW "\033[0;33m"
+    #define __HOST__ main
 #endif

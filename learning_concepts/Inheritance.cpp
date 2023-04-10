@@ -1,6 +1,8 @@
 # include <iostream>
 # include <stdio.h>
 # include "Colors.hpp"
+
+
 struct VEC
 {
     int _FI_, _LA_;
@@ -14,21 +16,18 @@ class UF{
     public :
         UF();
     void (*___leet___)(void);
-}
+};
 
-
-class newClass : public UF{
+class newClass : public UF{ // when set public i can acess UF VAR and Method
     bool    t_ret;
     public :
         void print_Class();
 };
 
 void    newClass::print_Class(void){
-    this->t_ret;
-
+    this->t_ret = 1;
+    this->__mp->_FI_ = 12;
 }
-
-
 
 void leet(void){
     using namespace std;
@@ -48,8 +47,7 @@ UF::UF(){
     std::cout << "INIT EXIT_SUCCESS" << std::endl;
 }
 
-
-
-
 int main(){
+    newClass LOL;
+    LOL.___leet___();
 }
