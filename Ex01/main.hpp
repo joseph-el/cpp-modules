@@ -7,7 +7,7 @@
 
 # define MAX_CONTACT 8
 
-# define _cout(CL1, TARGET, CL2, label) std::cout << CL1 << TARGET << CL2 << std::endl; goto label;
+# define _cout(CL1, TARGET, label) std::cout << CL1 << TARGET << std::endl; goto label;
 
 enum User_interput{
     ADD = (1<<1),
