@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 00:01:21 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/13 16:11:46 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:08:52 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ int main(void)
     std::string input;
 
     debut :
-        _gnl(WHITE"(ADD | SEARCH | EXIT) : ", input);
+        _gnl(WHITE"Write a command (ADD | SEARCH | EXIT) : ", input);
         Userinput(input);
     
     add :
-        system("clear");
         phonebook.Switch();
         adding(phonebook, input);
         goto debut;

@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 23:52:53 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/13 16:14:52 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:06:36 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 #include <iomanip>
 #include <string>
 #include <vector>
-# include "../../learning_concepts/Colors.hpp"
 
 # define MAX_CONTACT 3
 # define Display_Contact 2
 # define Display_Contacts 1
+# define WHITE  "\033[0;37m"
 
 // Macros Utils
 
@@ -33,7 +33,7 @@
 
 # define _goto(label) (label & (ADD | SEARCH)) ? (label & ADD ? ({goto add;}) : ({goto search;})) : exit(0);
 
-# define Userinput(obj) (obj.empty() or !which(obj)) ? ({_cout(WHITE, "INV [🆘]", debut);}) : _goto(which(obj)); 
+# define Userinput(obj) (obj.empty() or !which(obj)) ? ({_cout(WHITE, "[🆘]", debut);}) : _goto(which(obj)); 
 
 enum User_interput{
     ADD = (1<<1),
@@ -68,16 +68,11 @@ class PhoneBook{
         int   contact_size;
         int   label;
     public :
-        PhoneBook() : contact_size(0), label(0)  {}
+        PhoneBook() : contact_size(0), label(-1)  {}
         void        Display(int, short);
         void        Switch(void);
         friend void adding(PhoneBook &, std::string &);
         friend void search(PhoneBook phonebook, std::string &);
 };
-
-
-
-
-
 
 # endif
