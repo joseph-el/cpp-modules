@@ -6,7 +6,7 @@
 #    By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 23:53:34 by yoel-idr          #+#    #+#              #
-#    Updated: 2023/04/13 21:44:32 by yoel-idr         ###   ########.fr        #
+#    Updated: 2023/04/14 13:51:54 by yoel-idr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ $(NAME) : $(OBJS)
 		
 %.o: %.cpp $(HEADERS)
 	@c++ $(CFLAGS) -o $@ -c $<
-clean   :
-		@rm -f $(NAME)
+clean   : $(NAME) $(OBJS)
+		@rm -f $^
 		@echo "clean [✅]"
 
 .PHONY : clean all

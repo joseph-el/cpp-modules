@@ -4,46 +4,14 @@
 #include "Account.hpp"
 # include <iostream>
 
-
-typedef struct s_tree
-{
-	short			index;
-	std::string f_name;
-	std::string l_name;
-	std::string	number;
-	std::string	phone;
-
-
-
-	struct s_tree *left;
-	struct s_tree *right;
-}				t_tree;
-
-
-
-
-
-class s_phone{
-	private:
-		char *set;
-
-
-
-	
-}
 int		main( void ) {
 
 	typedef std::vector<Account::t>							  accounts_t;
 	typedef std::vector<int>								  ints_t;
 	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;
 
-
-
-
 	int	const				amounts[]	= { 42, 54, 957, 432, 1234, 0, 754, 16576 };
 
-
-	
 	size_t const			amounts_size( sizeof(amounts) / sizeof(int) );
 	accounts_t				accounts( amounts, amounts + amounts_size );
 	accounts_t::iterator	acc_begin	= accounts.begin();
@@ -80,7 +48,7 @@ int		main( void ) {
 
 		(*(it.first)).makeWithdrawal( *(it.second) );
 	}
-
+	
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
