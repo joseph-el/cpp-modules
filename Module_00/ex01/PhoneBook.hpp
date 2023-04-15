@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 23:52:53 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/13 21:06:36 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:00:33 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <vector>
 
 # define MAX_CONTACT 3
 # define Display_Contact 2
