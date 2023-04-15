@@ -1,16 +1,15 @@
-NAME    := BraiiiiiiinnnzzzZ
-SRCS    := randomChump.cpp Zombie.cpp main.cpp newZombie.cpp
+NAME    := BRAIN
+SRCS    := main.cpp 
 OBJS    := $(SRCS:%.cpp=%.o)
 FLAGS   := -Wall -Wextra -Werror -std=c++98
-HEADERS := Zombie.hpp
 
 all : $(NAME)
-		@echo "BraiiiiiiinnnzzzZ [✅]"
+		@echo "HI THIS IS BRAIN [✅]"
 
 $(NAME) : $(OBJS)	
 		@c++ $(FLAGS) $^ -o $@
 
-%.o: %.cpp $(HEADERS)
+%.o: %.cpp
 		@c++ $(FLAGS) -c $< -o $@
 
 clean :	$(OBJS) $(NAME)
@@ -18,4 +17,3 @@ clean :	$(OBJS) $(NAME)
 		@echo "Clean [✅]"
 
 .PHONY : clean all
-

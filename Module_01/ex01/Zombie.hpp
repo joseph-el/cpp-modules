@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 17:01:29 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/14 17:38:47 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/14 17:41:34 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/14 17:52:44 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Zombie.hpp"
+# pragma once
 
-int main(void)
-{
-    Zombie *Zz;
-    
-    Zz = newZombie("kk");
-    
-    randomChump("Hello Joseph");
-    delete Zz;
-    return (EXIT_SUCCESS);
-}
+# include <iostream>
+# include <string>
+
+class Zombie{
+    private :
+        std::string name;
+    public :
+        Zombie();
+        ~Zombie();
+        void announce(void);
+        friend Zombie* zombieHorde(int, std::string);
+};
+
+Zombie* zombieHorde( int N, std::string name );
