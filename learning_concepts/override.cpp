@@ -42,7 +42,6 @@ int __HOST__(){
     CARS *CAR1 = new CARS();
     CARS *CAR2 = new DACIA();
     CARS *CAR3 = new BMW();
-
     
     CAR1->DS();
     CAR2->DS();
