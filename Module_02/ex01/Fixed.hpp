@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 16:08:07 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/16 21:41:42 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/16 21:44:34 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/16 22:06:21 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,31 @@
 
 # include <iostream>
 # include <string>
-# include <string.h>
+# include <cmath>
 
 class Fixed {
-
+    
     private :
         int RawBits;
-        static int Bits;
+        static int fractional;
+
     public :
-        Fixed();
+        Fixed ();
+        Fixed(const int);
+        Fixed(const float);
+        
         ~Fixed();
         Fixed(const Fixed &);
         void operator = (const Fixed &);
+        
+        float toFloat( void ) const;
+        int   toInt( void ) const;
+
         int  getRawBits(void) const;
         void setRawBits(int const);
+        
+
+        
 };
 
 # endif

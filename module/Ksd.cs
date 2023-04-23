@@ -1,4 +1,4 @@
-         </summary>
+        //  </summary>
         private async Task RegisterCommandsAsync()
         {
             await AboutCommand.InitializeAsync(this);
@@ -24,6 +24,9 @@
             await SpadeContextInsertRegionCommand.InitializeAsync(this);
             await SpadeContextRemoveRegionCommand.InitializeAsync(this);
             await SpadeOptionsCommand.InitializeAsync(this);
+
+
+
             await SpadeRefreshCommand.InitializeAsync(this);
             await SpadeSearchCommand.InitializeAsync(this);
             await SpadeSortOrderAlphaCommand.InitializeAsync(this);

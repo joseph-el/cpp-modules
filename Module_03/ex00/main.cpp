@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 16:08:07 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/16 21:41:42 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/22 11:22:19 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/23 16:27:55 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# if !defined(FIXED_HPP)
-# define FIXED_HPP
+# include "ClapTrap.hpp"
 
-# include <iostream>
-# include <string>
-# include <string.h>
-
-class Fixed {
-
-    private :
-        int RawBits;
-        static int Bits;
-    public :
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed &);
-        void operator = (const Fixed &);
-        int  getRawBits(void) const;
-        void setRawBits(int const);
-};
-
-# endif
+int main(void)
+{
+    ClapTrap ret;
+    ClapTrap *set = new ClapTrap("BOB");
+    
+    ret = *set;
+    set->attack("Johen");
+    set->attack("Johen");
+    set->attack("Johen");
+    set->attack("Johen");
+    set->attack("Johen");
+    set->beRepaired(1);
+    set->takeDamage(10);
+    delete set;
+    return (EXIT_SUCCESS);
+}

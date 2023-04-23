@@ -5,23 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 16:12:11 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/16 21:40:45 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/22 11:22:19 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/22 14:33:24 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Fixed.hpp"
+# include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
 int main(void)
 {
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
+    // ClapTrap ret;
+    // ClapTrap *set = new ClapTrap("BOB");
+    // ClapTrap *Next = new ScavTrap("DExter");
+
+    // Next->attack("Alex");
     
-    c = b;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+    // return 0;
     
-    return 0;
+    // ret = *set;
+    // set->attack("Johen");
+    // set->attack("Johen");
+    // set->attack("Johen");
+    // set->attack("Johen");
+    // set->attack("Johen");
+    // set->beRepaired(1);
+    // set->takeDamage(10);
+    // delete set;
+    return (EXIT_SUCCESS);
 }

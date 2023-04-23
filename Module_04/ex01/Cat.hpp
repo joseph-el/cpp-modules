@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Cap.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 16:08:07 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/16 21:41:42 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/23 16:33:52 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/23 16:35:35 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# if !defined(FIXED_HPP)
-# define FIXED_HPP
+# pragma once
 
-# include <iostream>
-# include <string>
-# include <string.h>
+# include "Animal.hpp"
 
-class Fixed {
+class Cat : public Animal {
 
-    private :
-        int RawBits;
-        static int Bits;
     public :
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed &);
-        void operator = (const Fixed &);
-        int  getRawBits(void) const;
-        void setRawBits(int const);
+        Cat();
+        Cat(const Cat &);
+        Cat& operator=(const Cat &);
+        void makeSound(void);
+        Cat();
 };
-
-# endif

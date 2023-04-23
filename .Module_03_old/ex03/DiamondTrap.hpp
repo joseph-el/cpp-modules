@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 16:08:07 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/16 21:41:42 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/21 14:12:30 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/21 16:00:32 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# if !defined(FIXED_HPP)
-# define FIXED_HPP
+# pragma once
 
-# include <iostream>
-# include <string>
-# include <string.h>
+# include "ClapTrap.hpp"
 
-class Fixed {
-
+class DiamondTrap : public ScavTrap, public FragTrap {
+    
     private :
-        int RawBits;
-        static int Bits;
+        std::string name;
     public :
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed &);
-        void operator = (const Fixed &);
-        int  getRawBits(void) const;
-        void setRawBits(int const);
+        ~DiamondTrap();
+        DiamondTrap();
+        DiamondTrap(const std::string &);
+        void whoAmI();
 };
-
-# endif

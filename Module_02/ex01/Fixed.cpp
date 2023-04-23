@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 16:11:58 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/16 21:59:28 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/16 21:49:44 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/16 22:01:09 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 }
 
+void Fixed::operator=(const Fixed &Another) {
+    std::cout << "" << std::endl;
+    RawBits = Another.getRawBits();
+}
+
 Fixed::Fixed(const Fixed &Another) {
     std::cout << "Copy constructor called" << std::endl;
     *this = Another;
-}
-
-void Fixed::operator=(const Fixed &Another) {
-    std::cout << "Copy assignment operator called" << std::endl;
-    RawBits = Another.getRawBits();
 }
 
 int Fixed::getRawBits(void) const {

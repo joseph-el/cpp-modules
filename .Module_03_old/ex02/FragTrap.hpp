@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 16:08:07 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/16 21:41:42 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/21 11:57:12 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/21 12:02:41 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# if !defined(FIXED_HPP)
-# define FIXED_HPP
+# pragma once
 
-# include <iostream>
-# include <string>
-# include <string.h>
+# include "ClapTrap.hpp"
 
-class Fixed {
-
-    private :
-        int RawBits;
-        static int Bits;
+class FragTrap : public ClapTrap {
     public :
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed &);
-        void operator = (const Fixed &);
-        int  getRawBits(void) const;
-        void setRawBits(int const);
+        ~FragTrap();
+         FragTrap();
+         FragTrap(const std::string &);
+         void highFivesGuys(void);
 };
-
-# endif

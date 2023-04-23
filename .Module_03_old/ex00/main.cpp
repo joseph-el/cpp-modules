@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 16:08:07 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/16 21:41:42 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/20 18:19:29 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/20 18:21:57 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# if !defined(FIXED_HPP)
-# define FIXED_HPP
+# include "ClapTrap.hpp"
 
-# include <iostream>
-# include <string>
-# include <string.h>
+int main(void)
+{
+    ClapTrap ret("dexter");
+    ClapTrap set;
 
-class Fixed {
+    set = ret;
 
-    private :
-        int RawBits;
-        static int Bits;
-    public :
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed &);
-        void operator = (const Fixed &);
-        int  getRawBits(void) const;
-        void setRawBits(int const);
-};
-
-# endif
+    set.attack("JIII");
+    ret.attack("BOB");
+}

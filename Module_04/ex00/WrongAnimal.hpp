@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 16:08:07 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/16 21:41:42 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/23 16:51:05 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/23 16:53:49 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# if !defined(FIXED_HPP)
-# define FIXED_HPP
+# pragma once
 
 # include <iostream>
-# include <string>
-# include <string.h>
 
-class Fixed {
+class WrongAnimal {
+    protected :
+        std::string name;
 
-    private :
-        int RawBits;
-        static int Bits;
     public :
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed &);
-        void operator = (const Fixed &);
-        int  getRawBits(void) const;
-        void setRawBits(int const);
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal &);
+        WrongAnimal(const std::string &);
+        WrongAnimal& operator =(const WrongAnimal &);
+        void makeSound(void) const;
+        std::string getType(void) const;
+        ~WrongAnimal();
 };
-
-# endif
