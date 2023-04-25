@@ -1,12 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 16:57:41 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/23 17:06:59 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/23 20:36:37 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/23 20:38:22 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# pragma once
+
+# include "Animal.hpp"
+
+class Cat : public Animal {
+    
+    public :
+        Cat();
+        Cat(const Cat &);
+        Cat& operator =(const Cat &);
+        void makeSound(void) const;
+        ~Cat();
+};

@@ -1,12 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   WrongWrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 16:57:41 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/23 17:06:59 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/23 22:12:45 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/23 22:13:22 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# pragma once
+
+# include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal {
+
+    public :
+        WrongCat();
+        WrongCat(const WrongCat &);
+        WrongCat& operator =(const WrongCat &);
+        void makeSound(void) const;
+        ~WrongCat();
+};
