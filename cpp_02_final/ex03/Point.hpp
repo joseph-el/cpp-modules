@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/28 11:03:08 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/28 15:59:39 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/05/06 11:21:28 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/05/06 14:08:36 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# pragma once
+#pragma once
 
-# include <iostream>
+# include "Fixed.hpp"
+# define GET_X 1
+# define GET_Y 4
 
-class Fixed {
-    
-    private :
-        int        RawBits;
-        static const int fractional;
-    public :
-        Fixed();
-        Fixed(const Fixed &);
-        Fixed& operator =(const Fixed &);
-        int     getRawBits(void) const;
-        void    setRawBits(const int Raw);
-        ~Fixed();
+class Point
+{
+	private:
+		Fixed X;
+		Fixed Y;
+		
+	public:
+		Point();
+		Point(const Fixed &, const Fixed &);
+		Point(const Point &);
+		Point& operator = (const Point &);
+		Fixed Get_X_Y(short) const;
+		~Point();
 };
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
