@@ -5,26 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 15:48:38 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/05/06 14:37:09 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/28 11:03:04 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/04/28 16:02:18 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Point.hpp"
+# include "Fixed.hpp"
 
-int main( void ) 
+int main( void )
 {
-	Point A(Fixed((float)2), Fixed((float)3));
-	Point B(Fixed((float)2), Fixed((float)3));
-	Point C(Fixed((float)3), Fixed((float)4));
-	
-
-	Point P1(Fixed((float)-2), Fixed((float)-22));
-	Point P2(Fixed((float)1), Fixed((float)1));
-	
-	std::cout << (bsp(A, B, C, P1) ? "inside" : "outside") << std::endl;
-	std::cout << (bsp(A, B, C, P2) ? "inside" : "outside") << std::endl;
-
-	
-	return (EXIT_SUCCESS);
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    
+    return 0;
 }

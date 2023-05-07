@@ -5,26 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 15:48:38 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/05/06 14:37:09 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/04/22 11:22:19 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/05/07 17:08:32 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Point.hpp"
+# include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
 
-int main( void ) 
+int main(void)
 {
-	Point A(Fixed((float)2), Fixed((float)3));
-	Point B(Fixed((float)2), Fixed((float)3));
-	Point C(Fixed((float)3), Fixed((float)4));
-	
+    ClapTrap ret;
+    ClapTrap *set = new ClapTrap("BOB");
+    ClapTrap *Next = new ScavTrap("Dexter");
 
-	Point P1(Fixed((float)-2), Fixed((float)-22));
-	Point P2(Fixed((float)1), Fixed((float)1));
-	
-	std::cout << (bsp(A, B, C, P1) ? "inside" : "outside") << std::endl;
-	std::cout << (bsp(A, B, C, P2) ? "inside" : "outside") << std::endl;
-
-	
-	return (EXIT_SUCCESS);
+    Next->attack("Alex");
+    
+    return 0;
+    
+    ret = *set;
+    set->attack("Johen");
+    set->attack("Johen");
+    set->attack("Johen");
+    set->attack("Johen");
+    set->attack("Johen");
+    set->beRepaired(1);
+    set->takeDamage(10);
+    delete set;
+    return (EXIT_SUCCESS);
 }
