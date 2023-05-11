@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 20:06:43 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/04/24 12:15:00 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/05/07 16:19:29 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,16 @@ int main(void)
     Animal **ret = new Animal*[MAX_SIZE];
     int i = -1;
     puts(GREEN);
+    
     while (++i < MAX_SIZE) {
         if (i < MAX_SIZE / 2)
             ret[i] = new Dog();
         else
             ret[i] = new Cat();
     }
+
+
+    
     puts(WHITE);
     while (i--)
         delete  ret[i], ret[i] = nullptr;
