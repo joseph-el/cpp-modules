@@ -1,4 +1,0 @@
-# pargma once
-
-# include <iostream>
-

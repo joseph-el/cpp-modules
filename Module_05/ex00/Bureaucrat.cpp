@@ -25,7 +25,7 @@ void Bureaucrat::increment(short index) {
         grade > 150 ? throw std::exception() : 0;
     }
     catch (std::exception & e) {
-
+        std::cout << e.what() << std::endl;
     }
 }
 
@@ -35,7 +35,7 @@ void Bureaucrat::decrement(short index) {
         grade < 0 ? throw std::exception() : 0;
     }
     catch (std::exception & e) {
-        
+        std::cout << e.what() << std::endl;
     }
 }
 
