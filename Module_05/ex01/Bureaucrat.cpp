@@ -1,4 +1,4 @@
-# include "Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(0) {}
 
@@ -42,9 +42,19 @@ short Bureaucrat::getGrade(void) const {
     return (grade);
 }
 
+Bureaucrat::~Bureaucrat() {}
+
+bool Bureaucrat::signForm(Form &form) {
+	if (form.beSigned(*this)) {
+		std::cout << name << " signed " << form.getName() << std::endl;
+		return true;
+	} else {
+		std::cout << name << " couldn't sign " << form.getName() << " because the grade is lower than the required one" << std::endl;
+		return false;
+	}
+}
+
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
     os << bureaucrat.getName() << "bureaucrat grade " << bureaucrat.getGrade() << std::endl;
     return (os);
 }
-
-Bureaucrat::~Bureaucrat() {}

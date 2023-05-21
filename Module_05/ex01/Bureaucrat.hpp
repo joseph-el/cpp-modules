@@ -1,6 +1,10 @@
-# pragma once
+#pragma once
+#include <iostream>
+#include <string>
+#include <stdexcept>
+#include "Form.hpp"
 
-# include <iostream>
+class Form;
 
 # define MAX_GRADE 150
 # define MIN_GRADE 1
@@ -28,6 +32,7 @@ class Bureaucrat {
         short getGrade(void) const;
         void increment(void);
         void decrement(void);
+		bool signForm(Form &form);
         ~Bureaucrat();
 };
 
