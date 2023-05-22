@@ -1,9 +1,13 @@
 # pragma once
 
 # include <iostream>
+#include <exception>
 
 # define MAX_GRADE 150
 # define MIN_GRADE 1
+# define RED    "\033[0;31m"
+# define GREEN  "\033[0;32m"
+# define WHITE  "\033[0;37m"
 
 class Bureaucrat {
     private :

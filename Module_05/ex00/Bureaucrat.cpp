@@ -31,11 +31,11 @@ void Bureaucrat::decrement(void) {
 }
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw() {
-	return "Bureaucrat: GradeTooHighException";
+	return (GREEN"Bureaucrat: GradeTooHighException"WHITE);
 }
 
 const char *Bureaucrat::GradeTooLowException::what(void) const throw() {
-	return "Bureaucrat: GradeTooLowException";
+	return (RED"Bureaucrat: GradeTooLowException"WHITE);
 }
 
 std::string Bureaucrat::getName(void) const {
