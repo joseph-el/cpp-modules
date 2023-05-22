@@ -1,21 +1,25 @@
 # include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(0) {}
+Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(1) {
+    std::cout << "Default called !" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(const std::string &_name, short _grade) : name(_name), grade(_grade) {
-
+    std::cout << "By setting called !" << std::endl;
     (grade > MAX_GRADE) ? throw GradeTooLowException()  : 0;
 	(grade < MIN_GRADE) ? throw GradeTooHighException() : 0;
 
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &Another) {
-    *this = Another;
+Bureaucrat::Bureaucrat(const Bureaucrat &Another) : name(Another.name), grade(Another.grade) {
+    std::cout << "Copy called !" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &Another) {
-    Bureaucrat(Another.getName(), Another.getGrade());
-    return (*this);
+    std::cout << "assign operator called !" << std::endl;
+    if (this != &Another)
+        *this = Bureaucrat(Another);
+    return *this;
 }
 
 void Bureaucrat::increment(void) {
@@ -43,8 +47,10 @@ short Bureaucrat::getGrade(void) const {
 }
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
-    os << bureaucrat.getName() << "bureaucrat grade " << bureaucrat.getGrade() << std::endl;
+    os << bureaucrat.getName() << " bureaucrat grade " << bureaucrat.getGrade() << std::endl;
     return (os);
 }
 
-Bureaucrat::~Bureaucrat() {}
+Bureaucrat::~Bureaucrat() {
+    std::cout << "Destructor called ! ==? " << name <<  std::endl;
+}
