@@ -40,12 +40,23 @@ bool Form::beSigned(const Bureaucrat &bur) {
 	return bur.getGrade() <= grade_sign? _signed = true: false;
 }
 
+void Form::execute(Bureaucrat const &executor) const {
+	if (!_signed || executor.getGrade() > grade_exec) {
+		throw CannotExecute();
+	}
+	action();
+}
+
 const char *Form::GradeTooHighException::what() const throw() {
 	return "Form: Exception Grade too high!";
 }
 
 const char *Form::GradeTooLowException::what() const throw() {
 	return "Form: Exception Grade too low!";
+}
+
+const char *Form::CannotExecute::what() const throw() {
+	return "Form: Exception Can't execute";
 }
 
 std::ostream & operator << (std::ostream &os, const Form &form) {

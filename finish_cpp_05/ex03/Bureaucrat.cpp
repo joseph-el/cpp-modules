@@ -46,7 +46,7 @@ Bureaucrat::~Bureaucrat() {
 	std::cout << "destroy called !" << std::endl;
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
 
 	(form.beSigned(*this)) ? (std::cout << name << " signed " << form.getName() << std::endl) :
 		(std::cout << name << " couldn’t sign " << form.getName() <<  " because the grade is lower. " << std::endl);

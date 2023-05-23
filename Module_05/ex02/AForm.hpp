@@ -12,7 +12,7 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
     
     private :
         const std::string name;
@@ -22,25 +22,31 @@ class Form {
 
     public :
 
-        Form();
-        Form(const Form &);
-        Form(const std::string &, const short, const short);
-        Form& operator = (const Form &);
-        ~Form();
+        AForm();
+        AForm(const AForm &);
+        AForm(const std::string &, const short, const short);
+        AForm& operator = (const AForm &);
+        ~AForm();
 
         class GradeTooHighException: public std::exception {
-		virtual	const char *what(void) const throw();
-		};
-		class GradeTooLowException: public std::exception {
-		   virtual const char *what(void) const throw();
+		    const char *what(void) const throw();
 		};
 
+		class GradeTooLowException: public std::exception {
+		    const char *what(void) const throw();
+		};
+
+        class ErrorWenTryToExecute : public std::exception {
+		    const char *what(void) const throw();
+        };
+        
         const std::string& getName( void ) const;
         short getGrade_sign( void ) const;
         short getGrade_execute( void ) const;
         bool is_SIGNED( void ) const;
-
         bool beSigned(class Bureaucrat &);
+        virtual void action( void ) = 0;
+        void execute(Bureaucrat const &) const
 };
 
-std::ostream & operator<<(std::ostream &os, const Form &from);
+std::ostream & operator<<(std::ostream &os, const AForm &from);

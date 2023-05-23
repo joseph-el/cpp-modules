@@ -1,11 +1,11 @@
-NAME    := Form
-SRCS    := main.cpp Bureaucrat.cpp Form.cpp
+NAME    := Bureaucrat
+SRCS    := main.cpp Bureaucrat.cpp
 OBJS    := $(SRCS:%.cpp=%.o)
 FLAGS   := -Wall -Wextra -Werror -std=c++98
-HEADERS := Bureaucrat.hpp Form.hpp
+HEADERS := Bureaucrat.hpp
 
 all : $(NAME)
-		@echo "Form [✅]"
+		@echo "Bureaucrat [✅]"
 
 $(NAME) : $(OBJS)	
 		@c++ $(FLAGS) $^ -o $@

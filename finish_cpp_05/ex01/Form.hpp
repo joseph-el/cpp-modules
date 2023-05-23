@@ -15,10 +15,10 @@ class Bureaucrat;
 class Form {
     
     private :
-        const std::string name;
-        const short grade_sign;
-        const short grade_execute;
-        bool  is_signed;
+        const std::string  name;
+        const short         grade_sign;
+        const short         grade_execute;
+        bool                is_signed;
 
     public :
 
@@ -29,17 +29,17 @@ class Form {
         ~Form();
 
         class GradeTooHighException: public std::exception {
-		virtual	const char *what(void) const throw();
+			const char *what(void) const throw();
 		};
+
 		class GradeTooLowException: public std::exception {
-		   virtual const char *what(void) const throw();
+		    const char *what(void) const throw();
 		};
 
         const std::string& getName( void ) const;
         short getGrade_sign( void ) const;
         short getGrade_execute( void ) const;
         bool is_SIGNED( void ) const;
-
         bool beSigned(class Bureaucrat &);
 };
 

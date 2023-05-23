@@ -1,21 +1,25 @@
-#include "Bureaucrat.hpp"
+# include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(0) {}
+Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(1) {
+    std::cout << "Default called !" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(const std::string &_name, short _grade) : name(_name), grade(_grade) {
-
+    std::cout << "By setting called !" << std::endl;
     (grade > MAX_GRADE) ? throw GradeTooLowException()  : 0;
 	(grade < MIN_GRADE) ? throw GradeTooHighException() : 0;
 
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &Another) {
-    *this = Another;
+Bureaucrat::Bureaucrat(const Bureaucrat &Another) : name(Another.name), grade(Another.grade) {
+    std::cout << "Copy called !" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &Another) {
-    Bureaucrat(Another.getName(), Another.getGrade());
-    return (*this);
+    std::cout << "assign operator called !" << std::endl;
+    if (this != &Another)
+        *this = Bureaucrat(Another);
+    return *this;
 }
 
 void Bureaucrat::increment(void) {
@@ -27,11 +31,11 @@ void Bureaucrat::decrement(void) {
 }
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw() {
-	return "Bureaucrat: GradeTooHighException";
+	return (GREEN"Bureaucrat: GradeTooHighException"WHITE);
 }
 
 const char *Bureaucrat::GradeTooLowException::what(void) const throw() {
-	return "Bureaucrat: GradeTooLowException";
+	return (RED"Bureaucrat: GradeTooLowException"WHITE);
 }
 
 std::string Bureaucrat::getName(void) const {
@@ -42,17 +46,11 @@ short Bureaucrat::getGrade(void) const {
     return (grade);
 }
 
-Bureaucrat::~Bureaucrat() {
-	std::cout << "destroy called !" << std::endl;
-}
-
-void Bureaucrat::signForm(Form &form) {
-
-	(form.beSigned(*this)) ? (std::cout << name << " signed " << form.getName() << std::endl) :
-		(std::cout << name << " couldn’t sign " << form.getName() <<  " because the grade is lower. " << std::endl);
-}
-
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
     os << bureaucrat.getName() << " bureaucrat grade " << bureaucrat.getGrade() << std::endl;
     return (os);
+}
+
+Bureaucrat::~Bureaucrat() {
+    std::cout << "Destructor called ! ==? " << name <<  std::endl;
 }

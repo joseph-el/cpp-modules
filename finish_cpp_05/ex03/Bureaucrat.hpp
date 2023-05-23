@@ -3,9 +3,9 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
-#include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 # define MAX_GRADE 150
 # define MIN_GRADE 1
@@ -33,7 +33,7 @@ class Bureaucrat {
         short getGrade(void) const;
         void increment(void);
         void decrement(void);
-		void signForm(Form &form);
+		void signForm(AForm &form);
         ~Bureaucrat();
 };
 
