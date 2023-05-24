@@ -7,9 +7,6 @@
 
 class Form;
 
-# define MAX_GRADE 150
-# define MIN_GRADE 1
-
 class Bureaucrat {
     private :
         const std::string   name;

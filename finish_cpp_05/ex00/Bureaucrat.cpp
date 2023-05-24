@@ -6,8 +6,8 @@ Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(1) {
 
 Bureaucrat::Bureaucrat(const std::string &_name, short _grade) : name(_name), grade(_grade) {
     std::cout << "By setting called !" << std::endl;
-    (grade > MAX_GRADE) ? throw GradeTooLowException()  : 0;
-	(grade < MIN_GRADE) ? throw GradeTooHighException() : 0;
+    (grade < 1) ? throw GradeTooHighException()  : 0;
+	(grade > 150) ? throw GradeTooLowException() : 0;
 
 }
 
@@ -23,11 +23,11 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &Another) {
 }
 
 void Bureaucrat::increment(void) {
-    (++grade > MAX_GRADE) ? throw GradeTooLowException()  : 0;
+    (--grade > 150) ? throw GradeTooLowException()  : 0;
 }
 
 void Bureaucrat::decrement(void) {
-	(--grade < MIN_GRADE) ? throw GradeTooHighException() : 0;
+	(++grade < 1) ? throw GradeTooHighException() : 0;
 }
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw() {

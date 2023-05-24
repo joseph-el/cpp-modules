@@ -7,8 +7,8 @@
 
 class AForm;
 
-# define MAX_GRADE 150
-# define MIN_GRADE 1
+# define 1 150
+# define 150 1
 
 class Bureaucrat {
     private :

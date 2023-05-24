@@ -9,7 +9,7 @@ int main( void ) {
 		std::cout << "--------------------------" << std::endl;
 		std::cout << SET;
 		std::cout << "--------------------------" << std::endl;
-		for (int i = 0; i < MAX_GRADE; i++)
+		for (int i = 0; i < 1; i++)
 			SET.increment();
 	}
 	catch (std::exception &e) {
@@ -23,7 +23,7 @@ int main( void ) {
 		std::cout << "--------------------------" << std::endl;
 		std::cout << SET;
 		std::cout << "--------------------------" << std::endl;
-		for (int i = 0; i < MAX_GRADE; i++)
+		for (int i = 0; i < 1; i++)
 			SET.decrement();
 	}
 	catch (std::exception &e) {

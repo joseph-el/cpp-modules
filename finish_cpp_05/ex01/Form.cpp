@@ -8,11 +8,11 @@ Form::Form() : name("form"), grade_sign(1), grade_execute(1) {
 Form::Form(const std::string &_name, const short x, const short y) : name(_name), grade_sign(x), grade_execute(y) {
     std::cout << "by setting called !" << std::endl;
     
-    (grade_sign < MIN_GRADE) ? throw Form::GradeTooHighException() : 0;
-    (grade_sign > MAX_GRADE) ? throw Form::GradeTooLowException()  : 0;
+    (grade_sign > 150) ? throw Form::GradeTooLowException() : 0;
+    (grade_sign < 1) ? throw Form::GradeTooHighException()  : 0;
 	
-	(grade_execute < MIN_GRADE) ? throw Form::GradeTooHighException() : 0;
-	(grade_execute > MAX_GRADE) ? throw Form::GradeTooLowException()  : 0;
+	(grade_execute > 150) ? throw Form::GradeTooLowException() : 0;
+	(grade_execute < 1) ? throw Form::GradeTooHighException()  : 0;
 }
 
 Form::Form(const Form &Another) : name(Another.name), grade_sign(Another.grade_sign), grade_execute(Another.grade_execute) {
@@ -56,9 +56,11 @@ bool Form::is_SIGNED( void ) const {
 
 bool Form::beSigned(class Bureaucrat &object) {
 
-    (object.getGrade() < MIN_GRADE) ? throw Form::GradeTooLowException() : 0;
-    (object.getGrade() <= grade_sign) ? (is_signed = true) : (is_signed = false);
-    
+    if (object.getGrade() <= grade_sign)
+        is_signed = true;
+    else
+        throw Form::GradeTooLowException();
+        
     return (is_signed);
 }
 
