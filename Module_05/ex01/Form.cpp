@@ -1,7 +1,7 @@
 # include "Form.hpp"
 # include "Bureaucrat.hpp"
 
-Form::Form() : name("form"), grade_sign(0), grade_execute(0) {
+Form::Form() : name("form"), grade_sign(1), grade_execute(1) {
     std::cout << "Default called !" << std::endl;
 }
 

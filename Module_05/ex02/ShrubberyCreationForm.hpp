@@ -1,6 +1,6 @@
 # include "AForm.hpp"
 
-# include <iostream>
+#include <fstream>
 
 class ShrubberyCreationForm : public AForm {
 
@@ -9,7 +9,7 @@ class ShrubberyCreationForm : public AForm {
         ShrubberyCreationForm(const std::string &);
         ShrubberyCreationForm(const ShrubberyCreationForm &);
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm &);
-        virtual void action( void );
+        void action( void ) const;
         ~ShrubberyCreationForm();
 
 };

@@ -11,7 +11,7 @@ const std::string tree[] = {
 "   `&%8 ` |%&'    |.|        8 '|8'         ",
 "       |o|        | |         | |           ",
 "       |.|        | |         | |           ",
-"     |   8|_|__|  ,8_|__8|.  8_|__|_    ",
+"     |   8|_|__|  ,8_|__8|.  8_|__|_        ",
 };
 
 
@@ -32,12 +32,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void ShrubberyCreationForm::action( void ) const {
-
+    std::cout << "ShrubberyCreationForm action is called !" << std::endl;
     std::ofstream outfile(std::string(AForm::getName() + "_shrubbery"));
-
     for (int i = 0; !tree[i].empty(); i++)
         outfile << tree[i] << std::endl;
-    
     outfile << AForm::getName() << "_shrubbery";
 	outfile.close();
 

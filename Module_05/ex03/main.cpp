@@ -18,6 +18,7 @@ int main()
 		std::cout << "skip NULL " << std::endl;
 	}
 
+	puts("----------------------------------------------------------------------------------------------------");
 
 
 	try {
@@ -32,9 +33,10 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
+	puts("----------------------------------------------------------------------------------------------------");
 
 	try {
-			Bureaucrat ret("Joseph", 9);
+			Bureaucrat ret("Joseph", 1);
 			AForm *y = intern.makeForm("presidential request", "call me");
 			if (!y)
 				return EXIT_FAILURE;
@@ -45,9 +47,10 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
+	puts("----------------------------------------------------------------------------------------------------");
 
 	try {
-			Bureaucrat ret("Joseph", 22);
+			Bureaucrat ret("Joseph", 9);
 			AForm *y = intern.makeForm("shrubbery request", "call me");
 			if (!y)
 				return EXIT_FAILURE;

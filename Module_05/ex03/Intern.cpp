@@ -24,7 +24,6 @@ AForm *getRobotomy(const std::string &target) {
 	return new RobotomyRequestForm(target);
 }
 
-
 AForm* Intern::makeForm(const std::string &form, const std::string &target) {
 
     AForm *(*func)(const std::string &) = NULL;

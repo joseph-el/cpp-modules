@@ -8,15 +8,16 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm(targ
     pr("by setting of RobotomyRequestForm called !");
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &Another) {
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &) {
     pr("copy construtor called !");
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &) {
     pr("assign called of RobotomyRequestForm !");
+    return *this;
 }
 
-void RobotomyRequestForm::action( void ) {
+void RobotomyRequestForm::action( void ) const {
 	std::cout << AForm::getName() << " has been robotomized successfully 50\% of the time." << std::endl;
 }
 

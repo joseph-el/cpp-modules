@@ -1,8 +1,8 @@
-NAME    := Form
-SRCS    := main.cpp Bureaucrat.cpp Form.cpp
+NAME    := AForm
+SRCS    := main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 OBJS    := $(SRCS:%.cpp=%.o)
 FLAGS   := -Wall -Wextra -Werror -std=c++98
-HEADERS := Bureaucrat.hpp Form.hpp
+HEADERS := Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp
 
 all : $(NAME)
 		@echo "Form [✅]"

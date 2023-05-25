@@ -3,15 +3,15 @@
 const std::string tree[] = {
 
 "                   ,@@@@@@@,                ",
-"       ,,,.   ,@@@@@@/@@,  .oo8888o.        ",
-"    ,&%%&%&&%,@@@@@/@@@@@@,8888\88/8o       ",
-"   ,%&\%&&%&&%,@@@\@@@/@@@88\88888/88'      ",
-"   %&&%&%&/%&&%@@\@@/ /@@@88888\88888'      ",
-"   %&&%/ %&%%&&@@\ V /@@' `88\8 `/88'       ",
-"   `&%\ ` /%&'    |.|        \ '|8'         ",
+"       ,,,.   ,@@@@@@|@@,  .oo8888o.        ",
+"    ,&%%&%&&%,@@@@@|@@@@@@,8888888|8o       ",
+"   ,%&8%&&%&&%,@@@8@@@|@@@88888888|88'      ",
+"   %&&%&%&|%&&%@@8@@| |@@@88888888888'      ",
+"   %&&%| %&%%&&@@8 V |@@' `8888 `|88'       ",
+"   `&%8 ` |%&'    |.|        8 '|8'         ",
 "       |o|        | |         | |           ",
 "       |.|        | |         | |           ",
-"     /   \//_/__/  ,\_//__\\/.  \_//__/_    ",
+"     |   8|_|__|  ,8_|__8|.  8_|__|_    ",
 };
 
 
@@ -23,21 +23,22 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) :  AForm
     std::cout << "by setting of ShrubberyCreationForm" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &Another) {
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &) {
     std::cout << "copy constructor of ShrubberyCreationForm" << std::endl;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &Another) {
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &) {
     return *this;
 }
 
-void ShrubberyCreationForm::action( void ) {
+void ShrubberyCreationForm::action( void ) const {
 
-    std::cout << "ShrubberyCreationForm action function called !" << std::endl;
-    std::ofstream outfile(AForm::getName() + "_shrubbery");
-    for (int i = 0, tree[i], i++)
+    std::ofstream outfile(std::string(AForm::getName() + "_shrubbery"));
+
+    for (int i = 0; !tree[i].empty(); i++)
         outfile << tree[i] << std::endl;
-    outfile << Form::getName() << "_shrubbery";
+    
+    outfile << AForm::getName() << "_shrubbery";
 	outfile.close();
 
 }

@@ -36,8 +36,17 @@ class Men {
         }
 };
 
+void pp(){
+    inc x ;
+
+
+    = 5;
+
+
+}
 int main()
 {
+
     try {
         Men K(-2);
     }

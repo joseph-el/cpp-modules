@@ -20,7 +20,6 @@ ScalarConverter::~ScalarConverter() {}
 # define MAX_OF_DBL(X) (X > __DBL_MAX__ or X < __DBL_MIN__)
 
 
-
 void ScalarConverter::convert(const std::string &target) {
 
     int    ToInt    = std::atoi(target.c_str());
@@ -40,14 +39,37 @@ void ScalarConverter::convert(const std::string &target) {
                         std::cout << "Double : " << ToDouble << std::endl;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main(int argc, char **argv)
 {
     if (argc <= 1)
         return (EXIT_FAILURE);
 
-    argv ++;
-    ScalarConverter ret;
-    ret.convert(std::string(*argv));
+
+
+    std::string ret("+inff");
+    ret.pop_back();
+
+    std::cout << ret << std::endl;
+    // argv ++;
+    // ScalarConverter ret;
+    // ret.convert(std::string(*argv));
 
 
 

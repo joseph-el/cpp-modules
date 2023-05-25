@@ -24,6 +24,7 @@ class Bureaucrat {
         class GradeTooHighException : public std::exception {
             virtual const char *what() const throw();
         };
+        
         class GradeTooLowException : public std::exception {
             virtual const char *what() const throw();
         };
