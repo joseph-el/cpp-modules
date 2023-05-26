@@ -1,11 +1,11 @@
 # include "Form.hpp"
 # include "Bureaucrat.hpp"
 
-Form::Form() : name("form"), grade_sign(1), grade_execute(1) {
+Form::Form() : name("form"), grade_sign(1), grade_execute(1) , is_signed(false) {
     std::cout << "Default called !" << std::endl;
 }
 
-Form::Form(const std::string &_name, const short x, const short y) : name(_name), grade_sign(x), grade_execute(y) {
+Form::Form(const std::string &_name, const short x, const short y) : name(_name), grade_sign(x), grade_execute(y), is_signed(false) {
     std::cout << "by setting called !" << std::endl;
     
     (grade_sign > 150) ? throw Form::GradeTooLowException() : 0;
