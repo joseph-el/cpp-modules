@@ -6,9 +6,27 @@
 #include  <errno.h>
 # include <string.h>
 
-int main()
-{
-    int test = strtol("1111111111111111", NULL, 0);
-    errno = ENOM
-    std::cout << "check  " << errno << std::endl;
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+
+int main() {
+
+    const char *str = "3333333998888883993393322";
+    char *endptr;
+    errno = 0;
+
+    long num = strtol(str, &endptr, 10);
+
+    if (errno == ERANGE) {
+        printf("Out of range\n");
+    } else if (errno == EINVAL) {
+        printf("Invalid input\n");
+    } else if (*endptr != '\0') {
+        printf("Invalid characters: %s\n", endptr);
+    } else {
+        printf("Conversion successful: %ld\n", num);
+    }
+
+    return 0;
 }
