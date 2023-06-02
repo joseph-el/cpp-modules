@@ -36,6 +36,7 @@ bool    parse(_st ret, int &ValueofInt, char &ValueofChar, float &ValueofFloat, 
 
     if ( is_char(ret) )
         return ( true );
+
     return (remember > 1 or isnan(ValueofDouble) or isinf(ValueofDouble) or MAX_OF_INT(ValueofDouble) 
                         ?  false : true );
 }

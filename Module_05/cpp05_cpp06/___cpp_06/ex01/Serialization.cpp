@@ -8,7 +8,7 @@ Serialization& Serialization::operator = (const Serialization &) {return *this;}
 uintptr_t Serialization::serialize(Data* ptr) {
     
     uintptr_t converted = reinterpret_cast<uintptr_t>(ptr);
-
+    
     return (converted);
 }
 
