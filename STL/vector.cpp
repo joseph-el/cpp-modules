@@ -17,15 +17,15 @@ class r {
 int main(int, char **) 
 {
 
+    std::vector<std::string> a;
 
-
-
-
-
-
-
-
-
+    a.push_back("HELLO");
+    a.push_back("JUS");
+    a.push_back("JUS");
+    a.push_back("JUS");
+    a.push_back("JUS");
+    a.push_back("JUS");
+    a.cbegin()
 
     exit(0);
 }
