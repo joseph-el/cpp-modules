@@ -1,11 +1,11 @@
-NAME    := Span
-SRCS    := main.cpp Span.cpp
+NAME    := MutantStack
+SRCS    := main.cpp
 OBJS    := $(SRCS:%.cpp=%.o)
 FLAGS   := -Wall -Wextra -Werror -std=c++98
-HEADERS := Span.hpp
+HEADERS := MutantStack.hpp
 
 all : $(NAME)
-		@echo "Span [✅]"
+		@echo "MutantStack [✅]"
 
 $(NAME) : $(OBJS)	
 		@c++ $(FLAGS) $^ -o $@

@@ -5,22 +5,25 @@
 # include <iostream>
 # include <map>
 # include <exception>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+# include <unistd.h>
 
-class Error : std::exception {
-    public :
-        const char *what(char *) throw();
-};
-
-template <typename T>
 class Span {
 
     private :
-        unsigned int N;
-        int arr[N];
+        const unsigned int N;
+        std::vector<int> array;
+
     public :
 
-        Span(unsigned int);
-        void addNumber(int newNomber);
-        int shortestSpan() const;
-        int longestSpan() const;
+        Span();
+        Span( unsigned int );
+        
+        void addNumber( int );
+        int  shortestSpan( void ) ;
+        int  longestSpan( void ) ;
+        
+        ~Span();
 };
