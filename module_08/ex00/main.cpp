@@ -1,7 +1,7 @@
 # include "easyfind.hpp"
 
 const char* Error::what() const throw() {
-    return "I can`t find anything 🍌 ";
+    return "I can`t find anything ⛔️ ";
 }
 
 int main(int , char **) {

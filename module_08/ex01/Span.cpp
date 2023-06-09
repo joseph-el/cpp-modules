@@ -30,7 +30,7 @@ int findSpan(std::vector<int> &Arr, bool mode) {
         shortestSpan = localSpan < shortestSpan ? localSpan : shortestSpan;
     }
     longestSpan = Arr[Arr.size() - 1] - *Arr.begin();
-    longestSpan < 1 and shortestSpan < 1 ? throw "🦞": 0;
+    longestSpan < 1 or shortestSpan < 1 ? throw "🦞": 0;
     return mode ? longestSpan : shortestSpan;
 }
 

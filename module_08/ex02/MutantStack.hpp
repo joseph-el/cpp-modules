@@ -13,15 +13,15 @@ template <typename N>
 class MutantStack : public std::stack<N, std::deque<N> > {
 
     public :
+        
+        typedef typename std::deque<N>::const_iterator iterator;
 
-    typedef typename std::deque<N>::const_iterator iterator;
-
-    iterator begin() const {
-        return this->c.begin();
-    };
-    iterator end() const {
-        return this->c.end();
-    }
+        iterator begin() const {
+            return this->c.begin();
+        };
+        iterator end() const {
+            return this->c.end();
+        }
 
 };
 
