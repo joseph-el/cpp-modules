@@ -1,40 +1,37 @@
 # include "BitcoinExchange.hpp"
-# include <unistd.h>
-# include <stdlib.h>
-# include <deque>
 
 struct BitcoinExchange {
 
-
+    
     private :
         std::stack<std::string> _stack;
-
 
 };
 
 typedef struct BitcoinExchange t_BitcoinExchange;
 
-enum Error_flags {
 
-    VALIDE = 1<<1,
-    TITLE = 1<<2,
-    DATE_KEY,
-    VALUE_KEY,
-    DATE, 
-    VALUE,
-    LONG_VALUE,
-    PIPE_SEPARET,
-    NEGATIVE,
-    EMPTY
+const char *ErrorMsg[] = {  "TITLE",
+                            "DATE_KEY",
+                            "VALUE_KEY",
+                            "E_DATE",
+                            "E_VALUE",
+                            "PIPE_SEPARATE",
+                            "LONG_VALUE" 
 };
 
-typedef enum Error_flag t_error;
+using namespace std;
 
-const char *ErrorMsg[] = { "", "", "", "", "", "", "" };
+t_error parce(const char *fileName) {
 
-Error_flags parce(const char *fileName) {
+    // check validate of str;
+    std::ofstream file(std::string(fileName));
+    if (!file.is_open())
+        return ()
 
 
+    unsigned short ret = TITLE | EMPTY | LONG_VALUE;
+    ErrorMsg[(int)log2(ret)];
 
     return (VALIDE);
 }
