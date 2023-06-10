@@ -5,17 +5,10 @@ Span::Span(const Span &Another) {
 }
 
 Span& Span::operator=(const Span &Another) {
-    
-
+    this->array = Another.array;
+    this->N = Another.N;
+    return *this;
 }
-
-std::vector<int> getArray(void) {
-    return array;
-}
-
-unsigned int Getsize( void )  {
-    return this->N;
-};
 
 Span::Span(unsigned int Nsize) : N(Nsize) {
     int negative = static_cast<int>(Nsize);
@@ -32,21 +25,24 @@ void Span::addNumber(int Newnbr)
     array.push_back(Newnbr);
 }
 
-int findSpan(std::vector<int> &Arr, bool mode) {
+using namespace std;
 
-    int     shortestSpan, longestSpan, localSpan;
+int findSpan(std::vector<int> &Arr, bool mode) {
+    int shortestSpan, longestSpan, localSpan;
 
     std::sort(Arr.begin(), Arr.end());
-    shortestSpan = Arr[1] - Arr[0];
-    for (int i = 2; i < (int)Arr.size(); i++)
+
+    shortestSpan = std::abs(Arr[1] - Arr[0]);
+    for (size_t i = 2; i < Arr.size(); i++)
     {
-        localSpan = Arr[i] - Arr[i - 1];
+        localSpan = std::abs(Arr[i] - Arr[i - 1]);
         shortestSpan = localSpan < shortestSpan ? localSpan : shortestSpan;
     }
-    longestSpan = Arr[Arr.size() - 1] - *Arr.begin();
-    longestSpan < 1 or shortestSpan < 1 ? throw " 🦞 ": 0;
+
+    longestSpan = Arr[Arr.size() - 1] - std::abs(Arr[0]);
     return mode ? longestSpan : shortestSpan;
 }
+
 
 int Span::shortestSpan( void ) {
     if (array.empty() or array.size() <= 1)

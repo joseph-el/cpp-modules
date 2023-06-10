@@ -9,6 +9,7 @@
 #include <vector>
 #include <algorithm>
 # include <unistd.h>
+# include <limits.h>
 
 class Span {
 
@@ -29,7 +30,5 @@ class Span {
         int  shortestSpan( void );
         int  longestSpan( void );
 
-        std::vector<int> getArray(void) ;
-        unsigned int Getsize( void ) ;
         ~Span();
 };

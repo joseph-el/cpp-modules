@@ -1,6 +1,5 @@
 # include "Span.hpp"
 
-
 int main(void) {
 
     try {
@@ -84,15 +83,12 @@ int main(void) {
     puts("---------------------");
 
     try {
-        Span sp = Span(5);
+        Span sp = Span(4);
 
-        sp.addNumber(16);
-        sp.addNumber(-1);
-        sp.addNumber(4);
-        sp.addNumber(20);
+        sp.addNumber(2147483647);
+        sp.addNumber(-214748364);
+        sp.addNumber(9);
         sp.addNumber(100);
-
-        // -1 7 16 20 100
 
         std::cout  << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
