@@ -1,14 +1,7 @@
 # include "BitcoinExchange.hpp"
 
-struct BitcoinExchange {
 
-    
-    private :
-        std::stack<std::string> _stack;
 
-};
-
-typedef struct BitcoinExchange t_BitcoinExchange;
 
 
 const char *ErrorMsg[] = {  "TITLE",

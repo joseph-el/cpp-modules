@@ -11,8 +11,33 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <deque>
+# include <iterator>
+#include <fstream>
+#include <iostream>
+
+# include <limits>
+# include <limits.h>
+    typedef std::string _st;
 
 # include <math.h>
+
+struct s_data {
+    _st Date;
+    short Value;
+};
+
+typedef struct s_data t_data;
+
+// struct BitcoinExchange {
+
+//     void insert( struct s_data );
+    
+//     private :
+//         std::stack<t_data> _stack;
+    
+// };
+
+typedef struct BitcoinExchange t_BitcoinExchange;
 
 
 enum Error_flag : short {
