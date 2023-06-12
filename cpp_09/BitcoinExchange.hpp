@@ -13,7 +13,10 @@
 # include <iterator>
 # include <fstream>
 # include <iostream>
+
 # include <math.h>
+
+
 # include <limits>
 # include <limits.h>
 # include <cmath>
@@ -37,7 +40,7 @@ struct s_data {
     short Value;
 };
 
-enum Error_flag : int {
+enum Error_flag  {
 
     EMPTY_FILE = 1 << 0,
     DATE_ERROR = 1 << 1,
@@ -62,7 +65,7 @@ bool beginline( _st &);
 bool parcevalue( _st );
 bool NumberOrMinus( int );
 t_data checkline( _st & , short );
-t_err parce( t_BitcoinExchange & , const char * );
+t_err  parce( t_BitcoinExchange & , const char * );
 
 // enum Error_flag {
 

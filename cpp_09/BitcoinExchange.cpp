@@ -29,15 +29,20 @@ bool parcetime(_st time_) {
     for (; iterator_ != time_.end(); iterator_++) 
         _ += (*iterator_ == '-');
     if (_ > 2 or _ < 2 or std::all_of(time_.begin(), time_.end(), NumberOrMinus))
-        return (false);
-    return (
-            !MAX_MONTHS( atoi(time_.substr(time_.find_first_of("-") + 1, time_.find_last_of("-")).c_str()) ) and
-            !MAX_YEARS( atoi(time_.substr(0, time_.find_first_of("-")).c_str()) ) and
-            !MAX_DAYS(atoi(time_.substr(time_.find_last_of("-") + 1, time_.size()).c_str()) )
-    );
+        throw DATE_ERROR;
+    _ = 
+            (   !MAX_MONTHS ( atoi(time_.substr(time_.find_first_of("-") + 1, time_.find_last_of("-")).c_str()) ) and
+                !MAX_YEARS  (  atoi(time_.substr(0, time_.find_first_of("-")).c_str()) ) and
+                !MAX_DAYS   (   atoi(time_.substr(time_.find_last_of("-") + 1, time_.size()).c_str())  ) 
+            );
+
+    // std::cout << "check - >" << _ << std::endl;
+
+    return !_ ? throw DATE_ERROR : true;
 }
 
 bool parcevalue(_st lineofvalue) {
+    
     short ret;
 
     ret = 0;
@@ -51,7 +56,6 @@ bool parcevalue(_st lineofvalue) {
 
 t_data checkline(_st &line, short flag) {
 
-    std::string tmp = line;
     t_data      storedData;
     std::string time;
 
@@ -70,21 +74,21 @@ t_data checkline(_st &line, short flag) {
         end == -1 ? throw DATE_ERROR: time = time.substr(0, end + 1);
         begin = line.find_first_not_of("\t\n\r |");
         begin == -1 ? throw VALUE_ERROR: line = line.substr(begin, line.size());
+        
+        
+        
         parcetime(time);
         parcevalue(line);
     }
     catch (t_err e) {
 
 
-        // cout << "Check msg > " << _ErrorMsg_[(int)log2((double)e)] << endl;
-
-        // cout  << "check line <>" << (int)log2((double)e) << endl;
-
-        // check log
-        storedData.Date = std::string(_ErrorMsg_[2]);
+        storedData.Date = std::string("he");
         storedData.Value = -1;
+        return storedData;
 
     }
+
     storedData.Date = std::string(time);
     storedData.Value = atof(line.c_str());
     return (storedData);

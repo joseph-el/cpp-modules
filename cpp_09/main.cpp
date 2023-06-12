@@ -12,8 +12,18 @@ const char *_ErrorMsg_[] = {
                 "Error : NOT A POSITIVE NUMBER"
 };
 
+using namespace std;
+
 int main(int argc, char **argv)
 {
+
+    cout << (int  )log( (int) NEGATIVE_VALUE_ERROR )  << endl;
+
+    cout << _ErrorMsg_[  (int)log( NEGATIVE_VALUE_ERROR ) ] << endl;
+
+
+    return 1;
+
     t_BitcoinExchange   bitcoin;
     t_err               err;
 
@@ -25,8 +35,6 @@ int main(int argc, char **argv)
         std::cout << _ErrorMsg_[(int)log2((double)err)] << std::endl;
     }
 
-
-    std::cout << "iam here\n";
     while (!bitcoin.empty())
     {
         std::cout << "time : >" << bitcoin.top().Date << "<" << std::endl;
