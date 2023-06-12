@@ -29,9 +29,10 @@ bool beginline(_st &line) {
 
 # define MAX_DAYS (x) (1 < x or x > 31) 
 
-# define MAX_YEARS ((int)x) ( 2009 < x or x > 2022 )
+# define MAX_YEARS (x) ( 2009 < x or x > 2022 )
 
 # define VALUE(x) (x < 1 or x > INT_MAX)
+
 
 bool NumberOrMinus(int c)
 {
