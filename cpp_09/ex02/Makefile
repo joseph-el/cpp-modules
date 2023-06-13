@@ -1,11 +1,11 @@
-NAME    := BitcoinExchange
-SRCS    := main.cpp BitcoinExchange.cpp
+NAME    := PmergeMe
+SRCS    := main.cpp PmergeMe.cpp
 OBJS    := $(SRCS:%.cpp=%.o)
 FLAGS   := -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
-HEADERS := BitcoinExchange.hpp
+HEADERS := PmergeMe.hpp
 
 all : $(NAME)
-		@echo "BitcoinExchange [✅]"
+		@echo "PmergeMe [✅]"
 
 $(NAME) : $(OBJS)	
 		@c++ $(FLAGS) $^ -o $@

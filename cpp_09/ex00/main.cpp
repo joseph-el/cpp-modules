@@ -2,7 +2,7 @@
 
 const char *_ErrorMsg_[] = {
 
-                "Error : EMPTY FILE",
+                "Error : EMPTY CONTENT",
                 "Error : DATE SYNTAX ERROR",
                 "Error : OPENING THE FILE PROBLEM",
                 "Error : VALUE SYNTAX ERROR",
@@ -12,36 +12,19 @@ const char *_ErrorMsg_[] = {
                 "Error : NOT A POSITIVE NUMBER"
 };
 
-using namespace std;
-
 int main(int argc, char **argv)
 {
-
-    cout << (int  )log( (int) NEGATIVE_VALUE_ERROR )  << endl;
-
-    cout << _ErrorMsg_[  (int)log( NEGATIVE_VALUE_ERROR ) ] << endl;
-
-
-    return 1;
-
     t_BitcoinExchange   bitcoin;
     t_err               err;
 
     if (argc != 2) 
-        {FATAL_ARGM}
+        {ARGM_ERROR}
     
     err = parce(bitcoin, *++argv);
-    if (err & ~VALIDE_FILE) {
-        std::cout << _ErrorMsg_[(int)log2((double)err)] << std::endl;
-    }
+    if (err & ~VALIDE_FILE)
+        std::cout << _ErrorMsg_[ (int)log2( (double) err) ] << std::endl;
 
-    while (!bitcoin.empty())
-    {
-        std::cout << "time : >" << bitcoin.top().Date << "<" << std::endl;
-        std::cout << "value : >" << bitcoin.top().Value << "<" << std::endl;
-        bitcoin.pop();
-    }
+    _SHOW_DATE_(bitcoin);
 
-    // search(bitcoin);
     exit(EXIT_SUCCESS);
 }
