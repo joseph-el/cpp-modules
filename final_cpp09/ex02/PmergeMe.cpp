@@ -5,8 +5,6 @@ void checkNumber(std::list<std::string> &splitNumbers) {
     std::list<std::string>::iterator it = splitNumbers.begin();
     for (; it != splitNumbers.end(); it++)
     {
-        if (std::distance(splitNumbers.begin(), it) > 3000)
-            throw "test";
         for (int i = 0; it->c_str()[i];)
             !std::isdigit(it->c_str()[i]) ? throw "test" : i++;
         atoi(it->c_str()) < 0 ? throw "test" : 0;
@@ -85,14 +83,16 @@ void pmergeme(std::list<std::string> &splitNumbers) {
     print_container(list_numbers, "Before:  ");
     container_sorting(list_numbers);
     gettimeofday(&time_end, NULL);
-    time_algotithm1 = (time_end.tv_usec - time_begin.tv_usec);
+    time_algotithm1 = (time_end.tv_usec - time_begin.tv_usec) / 1000000.0;
     //----------------------------------
     gettimeofday(&time_begin, NULL);
     container_sorting(deque_numbers);
     print_container(deque_numbers, "After:  ");
     gettimeofday(&time_end, NULL);
-    time_algotithm2 = (time_end.tv_usec - time_begin.tv_usec);
+    time_algotithm2 = (time_end.tv_usec - time_begin.tv_usec) / 1000000.0;
 
-    std::cout << "Time to process a range of " << splitNumbers.size() << " elements with std::sort : " << time_algotithm1 << " us" << std::endl;
-    std::cout << "Time to process a range of " << splitNumbers.size() << " elements with std::stable_sort : " << time_algotithm2 << " us" << std::endl;
+    std::cout << "Time to process a range of " << splitNumbers.size() << \
+    std::fixed << std::setprecision(6) << " elements with std::list : " << time_algotithm1 << " us" << std::endl;
+    std::cout << "Time to process a range of " << splitNumbers.size() << \
+    std::fixed << std::setprecision(6) << " elements with std::deque : " << time_algotithm2 << " us" << std::endl;
 }
