@@ -46,7 +46,7 @@ Module 09 provides an in-depth exploration of the Standard Template Library (STL
 
 ## Resources
 
-Certainly! Here are some recommended resources for further learning and reference materials on the C++ concepts covered in the modules:
+Here are some recommended resources for further learning and reference materials on the C++ concepts covered in the modules:
 
 1. Namespaces, Classes, Member Functions, stdio Streams, Initialization Lists, Static, Const:
    - [C++ Reference](https://en.cppreference.com/w/)
