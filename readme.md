@@ -91,5 +91,4 @@ Certainly! Here are some recommended resources for further learning and referenc
     - [C++ Standard Library - Reference](https://en.cppreference.com/w/cpp)
     - [cplusplus.com - Standard Library](http://www.cplusplus.com/reference/)
 
-These resources provide comprehensive explanations, tutorials, and reference material to deepen your understanding of the concepts covered in the modules. Happy learning!
-Feel free to explore each module's folder in this repository to access the corresponding code examples and detailed explanations. Happy learning and coding in C++!
+Happy learning! Feel free to explore each module's folder in this repository to access the corresponding code examples and detailed explanations. Happy learning and coding in C++!
