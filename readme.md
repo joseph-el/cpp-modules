@@ -37,3 +37,11 @@ In module 07, you will dive into templates, a powerful feature of C++ that enabl
 ## Module 08: Templated Containers, Iterators, Algorithms
 
 Module 08 focuses on templated containers, iterators, and algorithms provided by the Standard Template Library (STL). You will explore various container classes, such as vectors, lists, and maps, and understand how to iterate over container elements using iterators. Additionally,
+
+ you will learn about STL algorithms that operate on containers, including searching, sorting, and modifying data. This module is essential for leveraging the power of the STL in your C++ programs.
+
+## Module 09: STL
+
+Module 09 provides an in-depth exploration of the Standard Template Library (STL). You will learn about the various containers, algorithms, and utilities offered by the STL, which provide efficient and reliable solutions for common programming tasks. Understanding the STL is crucial for writing high-quality, maintainable, and performant C++ code.
+
+Feel free to explore each module's folder in this repository to access the corresponding code examples and detailed explanations. Happy learning and coding in C++!
