@@ -44,4 +44,52 @@ Module 08 focuses on templated containers, iterators, and algorithms provided by
 
 Module 09 provides an in-depth exploration of the Standard Template Library (STL). You will learn about the various containers, algorithms, and utilities offered by the STL, which provide efficient and reliable solutions for common programming tasks. Understanding the STL is crucial for writing high-quality, maintainable, and performant C++ code.
 
+## Resources
+
+Certainly! Here are some recommended resources for further learning and reference materials on the C++ concepts covered in the modules:
+
+1. Namespaces, Classes, Member Functions, stdio Streams, Initialization Lists, Static, Const:
+   - [C++ Reference](https://en.cppreference.com/w/)
+   - [cplusplus.com](http://www.cplusplus.com/)
+
+2. Memory Allocation, Pointers to Members, References, Switch Statement:
+   - [C++ Pointers and Memory Management](https://www.learncpp.com/cpp-tutorial/68-pointers-and-memory-management/)
+   - [C++ Reference: References](https://en.cppreference.com/w/cpp/language/reference)
+   - [cplusplus.com - The switch statement](http://www.cplusplus.com/doc/tutorial/control/)
+
+3. Ad-hoc Polymorphism, Operator Overloading, Orthodox Canonical Class Form, Fixed Point:
+   - [C++ Tutorial: Polymorphism](https://www.learncpp.com/cpp-tutorial/126-polymorphism/)
+   - [C++ Operator Overloading](https://www.geeksforgeeks.org/c-operator-overloading/)
+   - [Orthodox Canonical Class Form](https://www.learncpp.com/cpp-tutorial/115-6-writing-a-class-orthodox-canonical-form/)
+
+4. Inheritance:
+   - [C++ Inheritance](https://www.learncpp.com/cpp-tutorial/112-simple-inheritance/)
+   - [cplusplus.com - Inheritance](http://www.cplusplus.com/doc/tutorial/inheritance/)
+
+5. Subtype Polymorphism, Abstract Classes, Interfaces:
+   - [C++ Polymorphism and Virtual Functions](https://www.learncpp.com/cpp-tutorial/125-polymorphism/)
+   - [Abstract Classes and Pure Virtual Functions](https://www.geeksforgeeks.org/pure-virtual-functions-and-abstract-classes/)
+   - [Interface Classes](https://www.learncpp.com/cpp-tutorial/127-interfaces/)
+
+6. Repetition and Exceptions:
+   - [C++ Loops and Iteration](https://www.learncpp.com/cpp-tutorial/53-loops-iteration/)
+   - [C++ Exception Handling](https://www.learncpp.com/cpp-tutorial/exceptions-basic-exception-handling/)
+   - [cplusplus.com - Exception Handling](http://www.cplusplus.com/doc/tutorial/exceptions/)
+
+7. Casts:
+   - [C++ Type Casting](https://www.learncpp.com/cpp-tutorial/type-casting/)
+
+8. Templates:
+   - [C++ Templates](https://www.learncpp.com/cpp-tutorial/templates/)
+   - [cplusplus.com - Templates](http://www.cplusplus.com/doc/oldtutorial/templates/)
+
+9. Templated Containers, Iterators, Algorithms:
+   - [C++ Standard Template Library (STL)](https://www.learncpp.com/cpp-tutorial/10-12a-introduction-to-the-stl/)
+   - [cplusplus.com - Containers](http://www.cplusplus.com/reference/stl/)
+
+10. STL:
+    - [C++ Standard Library - Reference](https://en.cppreference.com/w/cpp)
+    - [cplusplus.com - Standard Library](http://www.cplusplus.com/reference/)
+
+These resources provide comprehensive explanations, tutorials, and reference material to deepen your understanding of the concepts covered in the modules. Happy learning!
 Feel free to explore each module's folder in this repository to access the corresponding code examples and detailed explanations. Happy learning and coding in C++!
